@@ -31,9 +31,9 @@ jobs:
         env:
           VERSION_ID: ${{ steps.get-version-id.outputs.version-id }}  
         run: |
-          sed -i "s|publicPath: '/'|publicPath: '//cdn.jsdelivr.net/gh/XCPCIO/XCPCIO-Calendar@${{ env.VERSION_ID }}/'|" config.ts
-          sed -i "s|favicon: '/favicon.png'|favicon: '//cdn.jsdelivr.net/gh/XCPCIO/XCPCIO-Calendar@${{ env.VERSION_ID }}/favicon.png'|" config.ts 
-          sed -i "s|baidu: ''|baidu: '${{ secrets.BAIDU_ANALYTICS_ID }}'|" config.ts 
+          sed -i "s|publicPath: '/'|publicPath: '//cdn.jsdelivr.net/gh/XCPCIO/XCPCIO-Calendar-Webapp@${{ env.VERSION_ID }}/'|" config.ts
+          sed -i "s|favicon: '/favicon.png'|favicon: '//cdn.jsdelivr.net/gh/XCPCIO/XCPCIO-Calendar-Webapp@${{ env.VERSION_ID }}/favicon.png'|" config.ts 
+          sed -i "s|baidu: ''|baidu: '${{ secrets.BAIDU_ANALYTICS_ID }}'|" config.ts
           cat config.ts
           npm install
           npm run build
